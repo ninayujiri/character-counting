@@ -1,30 +1,20 @@
+function countLetters(str) {
 
-function strToArray(str) {
+  let noSpaces = str.split(" ").join("").split("");
+  let result = {};
 
-  let inputArray = [];
+  for (var i = 0; i < noSpaces.length; i++) {
 
-  for (var i = 0; i < str.length; i++) {
-    inputArray.push(str[i]);
+    if (!result[noSpaces[i]]) {
+      result[noSpaces[i]] = 1;
+    } else {
+      result[noSpaces[i]]++;
+    }
+
   }
 
-  return inputArray;
+  return result;
+
 }
 
-
-function makeKeys(inputArray) {
-
-  let characters = {};
-
-  for (var i = 0; i < inputArray.length; i++) {
-    characters["inputArray"] = "n";
-  }
-  return characters;
-}
-
-
-
-
-
-
-console.log(makeKeys(strToArray));
-console.log(strToArray("lighthouse in the house"));
+console.log(countLetters("lighthouse in the house"));
